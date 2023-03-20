@@ -1,0 +1,335 @@
+/* ==================================================================== General  */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.d-none {
+    display: none;
+}
+
+/* ==================================================================== header  */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 10vh;
+    background-color: rgb(2, 24, 46);
+    color: white;
+}
+
+header h1 {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+header div:nth-child(odd),
+aside div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 7% 0 7%;
+}
+
+header img,
+aside img {
+    height: 35px;
+    padding-right: 10px;
+}
+
+aside p {
+    font-size: 10px;
+    color: rgb(67, 67, 67);
+    position: absolute;
+    bottom: -1px;
+    
+}
+
+#profil-icon,
+#menu-icon,
+#full-trash,
+header div p {
+    cursor: pointer;
+}
+
+header div {
+    color: white;
+    z-index: 1;
+}
+
+.menu {
+    display: none;
+}
+
+ul {
+    position: absolute;
+    top: -77px;
+    left: 0;
+    right: 0;
+    line-height: 50px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    color: white;
+    background-color: #02182e;
+    width: 100vw;
+    padding: 100px 0 0 0;
+    transform: translateY(-300px);
+    transition: all 225ms ease-in-out;
+    padding-bottom: 25px;
+}
+
+/* ==================================================================== main / aside  */
+
+
+main {
+    display: flex;
+    align-items: baseline;
+    box-sizing: inherit;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 15vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(2, 24, 46);
+    color: black;
+}
+
+aside img {
+    position: absolute;
+    bottom: 24px;
+    height: 30px;
+}
+
+#table1 tr {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    width: 135px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    row-gap: 20px;
+    margin-bottom: 50px;
+}
+
+#table1 tr :nth-child(1) {
+    width: 15px;
+    height: 48px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#table1 tr :nth-child(2) {
+    padding-left: 10px;
+}
+
+.cell-1 {
+    background-color: purple;
+}
+
+.cell-2 {
+    background-color: rgb(255, 255, 65);
+}
+
+.cell-3 {
+    background-color: rgb(132, 220, 0);
+}
+
+.cell-4 {
+    background-color: orange;
+}
+
+/* ==================================================================== main / Pin-template  */
+
+
+#pin-template {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 15vw;
+    position: relative;
+    top: -27px;
+}
+
+#new-todo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 140px;
+    width: 380px;
+    border-radius: 10px;
+    border: 2px solid #02182e;
+    box-shadow: 10px 10px 5px rgb(156, 171, 186);
+    margin-bottom: 30px;
+}
+
+#pin-icon {
+    position: relative;
+    height: 24px;
+    top: 9px;
+    left: 345px;
+    cursor: pointer;
+}
+
+.display {
+    display: none !important;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 20px;
+    
+}
+
+#new-todo h2 {
+    line-height: 20px;
+    margin: 0;
+}
+
+input {
+    font-family: 'Julius Sans One', sans-serif;
+    border: none;
+    color: black;
+    margin: 0 0 10px 5px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+textarea {
+    border: none;
+    /* border-radius: 10px; */
+    color: black;
+    font-family: sans-serif;
+    width: 290px;
+    height: 45px;
+    margin: 0 5px 17px 0px;
+    background-color: #FFFFFF;
+    padding-left: 0;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+
+/* ==================================================================== new pin JS */
+
+#add-todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 135px;
+    border-radius: 10px;
+    background-color: rgb(2, 24, 46);
+    cursor: pointer;
+}
+
+#add-todo:hover {
+    background-color: rgb(5, 46, 87);
+}
+
+#close {
+    position: relative;
+    top: 7px;
+    left: 345px;
+    cursor: pointer;
+}
+
+/* ==================================================================== Responsive  */
+
+@media (max-width: 750px) {
+
+    .aside-d-none, #profil, #profil-icon {
+        display: none;
+    }
+
+    .display {
+        display: block !important;
+    }
+
+    .display-time p, #calender-icon {
+        display: none !important;
+    }
+
+    main {
+        justify-content: center;
+    }
+
+    #hidden-menu-icon {
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .show-ul {
+        transform: translateY(0);
+    }    
+
+    #pin-template {
+        margin-top: 130px;
+        padding-left: 0;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    header {
+        justify-content: flex-start;
+    }
+
+    .display-time {
+        display: none !important;
+    }
+}
+
+@media (max-width: 350px) {
+
+    #new-todo {
+        width: 300px;
+    }
+
+    #pin-icon {
+        left: 264px;
+    }
+
+    textarea {
+        width: 243px;
+    }
+}

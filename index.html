@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-Liste</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="render()">
+
+    <header>
+        <div>
+            <img src="img/profil.png" id="profil-icon">
+            <img src="img/menu.png" id="menu-icon" class="display" onclick="openMenu()">
+            <p id="profil">Profil</p>
+        </div>
+        <div>
+            <h1>To-do-Liste</h1>
+        </div>
+        <div class="display-time">
+            <img src="img/calender.png" id="calender-icon">
+            <p>
+                <script> document.write(new Date().toLocaleDateString()); </script>
+            </p>
+        </div>
+    </header>
+
+    <main>
+
+        <div>
+            <ul id="hidden-menu">
+                <li>Arbeit</li>
+                <li>Einkaufen</li>
+                <li>Termine</li>
+                <li>sontiges</li>
+                <img src="img/arrow.png" id="hidden-menu-icon" class="display" onclick="closeMenu()">
+            </ul>
+        </div>
+
+        <aside class="aside-d-none">
+
+            <table id="table1">
+                <tr>
+                    <td class="cell-1"></td>
+                    <td>Arbeit</td>
+                </tr>
+                <tr>
+                    <td class="cell-2"></td>
+                    <td>Einkaufen</td>
+                </tr>
+                <tr>
+                    <td class="cell-3"></td>
+                    <td>Termine</td>
+                </tr>
+                <tr>
+                    <td class="cell-4"></td>
+                    <td>sonstiges</td>
+                </tr>
+            </table>
+
+            <img src="img/empty-trash.png" id="empty-trash">
+            <img src="img/full-trash.png" id="full-trash" class="d-none">
+            <p>icons by icons8.de</p>
+
+        </aside>
+
+        <div id="pin-template">
+
+            <form id="new-todo">
+                <img type="submit" src="img/pin.png" id="pin-icon" onclick="addNewTodo()">
+                <div class="inputs">
+                    <h2 id="topic"><input placeholder="Titel..." type="text" id="input-topic" class="input.topic"></h2>
+                    <textarea placeholder="Dein Text..." id="input-text"></textarea>
+                </div>
+            </form>
+
+            <div id="pinnedTodos">
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
